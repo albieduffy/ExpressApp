@@ -7,8 +7,19 @@
   </head>
   <body>
     <form id="my-form">
-      <label for="message"></label>
-        <input type="text" id="message">
+      <label for="doing">What are you meant to be doing?</label>
+      <select id="doing" name="doing">
+        <option value="shopping">Shopping</option>
+        <option value="kids">Picking up the kids</option>
+        <option value="gym">Working out at the gym</option>
+        <option value="work">Working</option>
+      </select>
+      <label for="daytime"></label>
+      <select id="daytime" name="daytime">
+        <option value="morning">Morning</option>
+        <option value="afternoon">Afternoon</option>
+        <option value="evening">Evening</option>
+      </select>
       <input type="submit">
     </form>
   </body>
