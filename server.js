@@ -1,7 +1,23 @@
 const express = require('express');
+const cors = require('cors');
+const bodyParser = require('body-parser');
 
 const server = express();
+server.use(cors());
+server.use(bodyParser.text());
 
 const port = 3000;
 
-server.listen(port, () => console.log(`Express departing now from http://localhost:${port}`));
+let reversed;
+
+server.get('/', (req, res) => res.send('Hello, client!'))
+
+// Reverse index route
+server.get('/reverse', (req, res) => res.send('Hello'))
+
+server.post('/reverse', (req, res) => {
+    let newMessage = JSON.parse(req.body);
+    reversed = newMessage.split('').reverse().join('');
+    res.send(JSON.stringify(reversed))
+})
+server.listen(port, () => console.log(`Express now departing from http://localhost:${port}!`))
