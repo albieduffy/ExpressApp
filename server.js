@@ -17,7 +17,10 @@ server.get('/reverse', (req, res) => res.send('Hello'))
 
 server.post('/reverse', (req, res) => {
     let newMessage = JSON.parse(req.body);
+    console.log(newMessage);
     reversed = newMessage.split('').reverse().join('');
-    res.send(JSON.stringify(reversed))
+    res.send(JSON.stringify(reversed));
+
 })
+
 server.listen(port, () => console.log(`Express now departing from http://localhost:${port}!`))

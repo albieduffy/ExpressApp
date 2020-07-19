@@ -1,4 +1,4 @@
-const url = "http://localhost:8000";
+const url = "http://localhost:3000";
 const myForm = document.querySelector("#my-form");
 let input;
 
@@ -15,7 +15,7 @@ function returnReverse (e) {
     body: JSON.stringify(input)
   };
 
-  fetch('http://localhost:8000/reverse', options)
+  fetch('http://localhost:3000/reverse', options)
     .then(response => response.json())
     .then(addInput)
     .catch(console.warn);
